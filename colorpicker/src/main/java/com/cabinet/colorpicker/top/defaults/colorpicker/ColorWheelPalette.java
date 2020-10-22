@@ -40,7 +40,7 @@ public class ColorWheelPalette extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         int netWidth = w - getPaddingLeft() - getPaddingRight();
         int netHeight = h - getPaddingTop() - getPaddingBottom();
-        radius = Math.min(netWidth, netHeight) * 0.5f;
+        radius = Math.min(netWidth, netHeight) * 0.38f;
         if (radius < 0) return;
         centerX = w * 0.5f;
         centerY = h * 0.5f;

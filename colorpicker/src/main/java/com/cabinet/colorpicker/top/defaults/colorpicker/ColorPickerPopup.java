@@ -57,8 +57,8 @@ public class ColorPickerPopup {
         final ColorPickerView colorPickerView = layout.findViewById(R.id.colorPickerView);
         popupWindow = new PopupWindow(layout, ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
-//        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+//        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         popupWindow.setOutsideTouchable(true);
         colorPickerView.setInitialColor(initialColor);
         colorPickerView.setEnabledBrightness(enableBrightness);
@@ -88,7 +88,9 @@ public class ColorPickerPopup {
 
         final View colorIndicator = layout.findViewById(R.id.colorIndicator);
         final TextView colorHex = layout.findViewById(R.id.colorHex);
-
+        final TextView red = layout.findViewById(R.id.tv_red_1);
+        final TextView green = layout.findViewById(R.id.tv_green_1);
+        final TextView blue = layout.findViewById(R.id.tv_blue_1);
         colorIndicator.setVisibility(showIndicator ? View.VISIBLE : View.GONE);
         colorHex.setVisibility(showValue ? View.VISIBLE : View.GONE);
 
@@ -107,6 +109,9 @@ public class ColorPickerPopup {
                 if (showValue) {
                     colorHex.setText(colorHex(color));
                 }
+                red.setText((color & 0xff0000)>>16);
+                green.setText((color & 0xff00>>8));
+                blue.setText((color & 0xff>>8));
             }
         });
 
@@ -188,11 +193,10 @@ public class ColorPickerPopup {
     }
 
     private String colorHex(int color) {
-        int a = Color.alpha(color);
         int r = Color.red(color);
         int g = Color.green(color);
         int b = Color.blue(color);
-        return String.format(Locale.getDefault(), "0x%02X%02X%02X%02X", a, r, g, b);
+        return String.format(Locale.getDefault(), "0x%02X%02X%02X", r, g, b);
     }
 
     public abstract static class ColorPickerObserver implements ColorObserver {

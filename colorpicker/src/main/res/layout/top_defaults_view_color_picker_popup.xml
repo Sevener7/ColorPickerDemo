@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     android:padding="8dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        >
         <com.cabinet.colorpicker.top.defaults.colorpicker.ColorPickerView
             android:id="@+id/colorPickerView"
             android:layout_width="wrap_content"
@@ -46,14 +37,65 @@
             android:background="?android:selectableItemBackground"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
-
+        <View
+            android:id="@+id/view_bg_red"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="#FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cancel"
+            android:layout_marginTop="8dp"
+            />
+        <View
+            android:id="@+id/view_bg_green"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="#00FFFF"
+            app:layout_constraintStart_toEndOf="@id/view_bg_red"
+            app:layout_constraintTop_toBottomOf="@id/cancel"
+            android:layout_marginTop="8dp"
+            />
+        <View
+            android:id="@+id/view_bg_blue"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="#0000FF"
+            app:layout_constraintStart_toEndOf="@id/view_bg_green"
+            app:layout_constraintTop_toBottomOf="@id/cancel"
+            android:layout_marginTop="8dp"
+            />
+        <TextView
+            android:id="@+id/tv_red_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/view_bg_red"
+            app:layout_constraintRight_toRightOf="@id/view_bg_red"
+            app:layout_constraintTop_toBottomOf="@id/view_bg_red"
+            />
+        <TextView
+            android:id="@+id/tv_green_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/view_bg_green"
+            app:layout_constraintRight_toRightOf="@id/view_bg_green"
+            app:layout_constraintTop_toBottomOf="@id/view_bg_green"
+            />
+        <TextView
+            android:id="@+id/tv_blue_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/view_bg_red"
+            app:layout_constraintRight_toRightOf="@id/view_bg_red"
+            app:layout_constraintTop_toBottomOf="@id/view_bg_red"
+            />
         <View
             android:id="@+id/colorIndicator"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="@+id/cancel"
             app:layout_constraintRight_toRightOf="@+id/cancel"
-            app:layout_constraintTop_toBottomOf="@+id/cancel"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_blue_1"/>
 
         <TextView
             android:id="@+id/colorHex"
@@ -65,7 +107,5 @@
             app:layout_constraintLeft_toLeftOf="@+id/ok"
             app:layout_constraintRight_toRightOf="@+id/ok"
             app:layout_constraintTop_toBottomOf="@+id/ok"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
