@@ -16,7 +16,7 @@ Step1.Add the JitPack repository to your build file
 	}
   Step 2. Add the dependency
   ---
-  dependencies {
+  	dependencies {
 	        implementation 'com.github.Sevener7:ColorPickerDemo:${latestVersion}'
 	}
 
