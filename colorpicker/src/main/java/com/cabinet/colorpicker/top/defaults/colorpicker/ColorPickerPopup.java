@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.cabinet.colorpicker.R;
 
 import java.util.Locale;
@@ -53,7 +55,7 @@ public class ColorPickerPopup {
         if (inflater == null) return;
 
         @SuppressLint("InflateParams")
-        View layout = inflater.inflate(R.layout.top_defaults_view_color_picker_popup, null);
+        View layout = inflater.inflate(R.layout.top_defaults_view_color_picker_popup_new, null);
         final ColorPickerView colorPickerView = layout.findViewById(R.id.colorPickerView);
         popupWindow = new PopupWindow(layout, ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -88,9 +90,9 @@ public class ColorPickerPopup {
 
         final View colorIndicator = layout.findViewById(R.id.colorIndicator);
         final TextView colorHex = layout.findViewById(R.id.colorHex);
-        final TextView red = layout.findViewById(R.id.tv_red_1);
-        final TextView green = layout.findViewById(R.id.tv_green_1);
-        final TextView blue = layout.findViewById(R.id.tv_blue_1);
+        final TextView redTv = layout.findViewById(R.id.tv_red_1);
+        final TextView greenTv = layout.findViewById(R.id.tv_green_1);
+        final TextView blueTv = layout.findViewById(R.id.tv_blue_1);
         colorIndicator.setVisibility(showIndicator ? View.VISIBLE : View.GONE);
         colorHex.setVisibility(showValue ? View.VISIBLE : View.GONE);
 
@@ -109,9 +111,9 @@ public class ColorPickerPopup {
                 if (showValue) {
                     colorHex.setText(colorHex(color));
                 }
-                red.setText((color & 0xff0000)>>16);
-                green.setText((color & 0xff00>>8));
-                blue.setText((color & 0xff>>8));
+                redTv.setText(String.valueOf((color & 0x00ff0000)>>16));
+                greenTv.setText(String.valueOf((color & 0x0000ff00)>>8));
+                blueTv.setText(String.valueOf((color & 0xff)));
             }
         });
 
