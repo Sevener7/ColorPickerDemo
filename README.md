@@ -20,6 +20,7 @@ Step1.Add the JitPack repository to your build file
 	        implementation 'com.github.Sevener7:ColorPickerDemo:${latestVersion}'
 	}
 
-	Replace ${latestVersion} with the latest version code.See [lastestVersion](https://github.com/Sevener7/ColorPickerDemo/releases)
+
+<br>Replace ${latestVersion} with the latest version code.See [lastestVersion](https://github.com/Sevener7/ColorPickerDemo/releases)
   
   
