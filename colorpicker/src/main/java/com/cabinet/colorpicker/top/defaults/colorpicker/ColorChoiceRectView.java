@@ -123,7 +123,10 @@ public class ColorChoiceRectView extends View implements ColorObservable, Updata
 //        updateValue(event.getX());
         boolean isTouchUpEvent = event.getActionMasked() == MotionEvent.ACTION_UP;
         if (!onlyUpdateOnTouchEventUp || isTouchUpEvent) {
-            emitter.onColor(getColorAtPoint(event.getX()), true, isTouchUpEvent);
+            if (getColorAtPoint(event.getX()) != 0) {
+                emitter.onColor(getColorAtPoint(event.getX()), true, isTouchUpEvent);
+            }
+
         }
 
     }
@@ -169,15 +172,15 @@ public class ColorChoiceRectView extends View implements ColorObservable, Updata
                 return paint1.getColor();
             } else if (centerX - 3 * mPanding / 2 - 2 * mLength < x && x < centerX - 3 * mPanding / 2 - mLength) {
                 return paint3.getColor();
-            }else if (centerX - 5 * mPanding / 2 - 3 * mLength < x && x < centerX - 5 * mPanding / 2 - 2*mLength) {
+            } else if (centerX - 5 * mPanding / 2 - 3 * mLength < x && x < centerX - 5 * mPanding / 2 - 2 * mLength) {
                 return paint5.getColor();
             }
         } else {
-            if(centerX+mPanding/2<x&& x<centerX+mPanding/2+mLength){
+            if (centerX + mPanding / 2 < x && x < centerX + mPanding / 2 + mLength) {
                 return paint2.getColor();
-            }else if(centerX+3*mPanding/2+mLength<x && x<centerX+3*mPanding/2+2*mLength){
+            } else if (centerX + 3 * mPanding / 2 + mLength < x && x < centerX + 3 * mPanding / 2 + 2 * mLength) {
                 return paint4.getColor();
-            }else if(centerX+5*mPanding/2+2*mLength<x && x<centerX+5*mPanding/2+3*mLength){
+            } else if (centerX + 5 * mPanding / 2 + 2 * mLength < x && x < centerX + 5 * mPanding / 2 + 3 * mLength) {
                 return paint6.getColor();
             }
         }
