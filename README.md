@@ -2,8 +2,7 @@
 
 //原作者
 ====
-https://github.com/duanhong169/ColorPicker/releases
-在上面代码中增加默认颜色选择
+https://github.com/duanhong169/ColorPicker/releases<br>在上面代码中增加默认颜色选择
 
 Gradle
 ===
@@ -18,7 +17,9 @@ Step1.Add the JitPack repository to your build file
   Step 2. Add the dependency
   ---
   dependencies {
-	        implementation 'com.github.Sevener7:ColorPickerDemo:Tag'
+	        implementation 'com.github.Sevener7:ColorPickerDemo:${latestVersion}'
 	}
+
+Replace ${latestVersion} with the latest version code.See [lastestVersion](https://github.com/Sevener7/ColorPickerDemo/releases)
   
   
