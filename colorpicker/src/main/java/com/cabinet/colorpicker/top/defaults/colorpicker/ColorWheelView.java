@@ -77,7 +77,7 @@ public class ColorWheelView extends FrameLayout implements ColorObservable, Upda
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         int netWidth = w - getPaddingLeft() - getPaddingRight();
         int netHeight = h - getPaddingTop() - getPaddingBottom();
-        radius = Math.min(netWidth, netHeight) * 0.5f - selectorRadiusPx;
+        radius = Math.min(netWidth, netHeight) * 0.38f - selectorRadiusPx;
         if (radius < 0) return;
         centerX = netWidth * 0.5f;
         centerY = netHeight * 0.5f;
